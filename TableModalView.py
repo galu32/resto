@@ -106,10 +106,10 @@ class TableModalView(ModalView):
         t.start()
 
     def get_items(self):
-        from ItemsScreen import ItemsPage
+        from ItemScreen import ItemCard
         se = _session()
 
-        for item in se.query(ItemsPage):
+        for item in se.query(ItemCard):
             self.ids.ArticulosList.add_widget(
                 ListItemWithCheckbox(text=item.Name,_price=item.Price)
                 )

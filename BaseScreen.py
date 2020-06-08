@@ -55,3 +55,11 @@ class BasePage(Screen):
         self.working = False
         if not text: text = "A ocurrido un error vuelve a intentarlo."
         Snackbar(text = text).show()
+
+    def screen_switcher(self,screen):
+        if screen == "Articulos":
+            self.parent.current = "ItemPage"
+            self.parent.ItemScreen.load_categories()
+        if screen == "Mesas":
+            self.parent.current = "TablePage"
+        self.ids.nav_drawer.toggle_nav_drawer()

@@ -3,6 +3,17 @@ from BaseScreen import *
 
 tablescreen_kv = """     
 
+<NavItem@OneLineAvatarIconListItem>:
+    theme_text_color : "Custom"
+    text_color : rgba("#2196F3")
+    icon : ""
+    on_release: root.parent.parent.parent.screen_switcher(root.text)
+
+    IconLeftWidget:
+        icon : root.icon
+        theme_text_color : "Custom"
+        text_color : rgba("#2196F3")
+
 <TablePage>:
 
     name : "TablePage"
@@ -13,7 +24,7 @@ tablescreen_kv = """
         MDToolbar:
             id : BaseToolbar
             pos_hint : {"top" : 1}
-            left_action_items : [['chef-hat', lambda x : None]]
+            left_action_items : [['chef-hat', lambda x : nav_drawer.toggle_nav_drawer()]]
             MDRaisedButton :
                 pos_hint : {"center_x": .5, "center_y": .5}
                 text : "Cargar/Refrescar Mesas"
@@ -30,6 +41,35 @@ tablescreen_kv = """
                 spacing : 5
                 size_hint_y : None
                 height : (len(self.children) / 3) * (Window.height / 3.6)
+        
+    MDNavigationDrawer:
+        id: nav_drawer
+
+        MDGridLayout:
+            cols : 1
+
+            MDToolbar:
+                pos_hint : {"top" : 1}
+                right_action_items : [['close', lambda x : nav_drawer.toggle_nav_drawer()]]
+
+            NavItem:
+                text : "Mesas"
+                icon : "table-chair"
+
+            NavItem:
+                text : "Articulos"
+                icon : "food"
+
+            NavItem:
+                text : "Reportes"
+                icon : "book-information-variant"
+
+            NavItem:
+                text : "Configuraciones"
+                icon : "database-settings"
+                
+
+
 
 <BlueCenteredLabel>:
     halign : "center"
