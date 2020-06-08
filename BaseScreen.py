@@ -22,7 +22,6 @@ basescreen_kv = """
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
 
 """
-
 class Working(FloatLayout):
 
     angle = NumericProperty(0)
