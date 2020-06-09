@@ -42,34 +42,8 @@ tablescreen_kv = """
                 size_hint_y : None
                 height : (len(self.children) / 3) * (Window.height / 3.6)
         
-    MDNavigationDrawer:
+    NavDrawer:
         id: nav_drawer
-
-        MDGridLayout:
-            cols : 1
-
-            MDToolbar:
-                pos_hint : {"top" : 1}
-                right_action_items : [['close', lambda x : nav_drawer.toggle_nav_drawer()]]
-
-            NavItem:
-                text : "Mesas"
-                icon : "table-chair"
-
-            NavItem:
-                text : "Articulos"
-                icon : "food"
-
-            NavItem:
-                text : "Reportes"
-                icon : "book-information-variant"
-
-            NavItem:
-                text : "Configuraciones"
-                icon : "database-settings"
-                
-
-
 
 <BlueCenteredLabel>:
     halign : "center"

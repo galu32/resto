@@ -1,4 +1,5 @@
 from Libs import *
+from SM import _session, Base
 
 basescreen_kv = """     
 ##basescreen
@@ -62,4 +63,13 @@ class BasePage(Screen):
             self.parent.ItemScreen.load_categories()
         if screen == "Mesas":
             self.parent.current = "TablePage"
+        if screen == "Configuraciones":
+            if not self.parent._current_user:
+                return self.parent.login_dialog()
+            if not self.parent._current_user.Admin:
+                return Snackbar(text="Su usuario no tiene acceso a las Configuraciones.").show()
+            self.parent.current = "ConfigPage"
         self.ids.nav_drawer.toggle_nav_drawer()
+
+    def logout(self):
+        self.parent._current_user = 0

@@ -47,5 +47,7 @@ from threading import Thread
 import webbrowser
 import certifi
 from sqlalchemy import *
+from sqlalchemy import exc
+from GlobalTools import *
 # import os
 import random
