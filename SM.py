@@ -68,4 +68,5 @@ class UserCard(Base):
     Pass = Column(String)
     Name = Column(String)
     Admin = Column(Integer)
+    Type = Column(Integer)
 

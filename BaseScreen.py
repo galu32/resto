@@ -68,6 +68,7 @@ class BasePage(Screen):
                 return self.parent.login_dialog()
             if not self.parent._current_user.Admin:
                 return Snackbar(text="Su usuario no tiene acceso a las Configuraciones.").show()
+            self.parent.ConfigScreen.load_users()
             self.parent.current = "ConfigPage"
         self.ids.nav_drawer.toggle_nav_drawer()
 

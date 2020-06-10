@@ -7,6 +7,7 @@ from kivy.network.urlrequest import UrlRequest
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.carousel import Carousel
 from kivy.uix.floatlayout import FloatLayout
+from kivymd.uix.tab import MDTabsBase
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.image import Image, AsyncImage
 from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition
@@ -25,7 +26,7 @@ from kivymd.uix.expansionpanel import MDExpansionPanelOneLine, MDExpansionPanel
 from kivymd.uix.gridlayout import MDGridLayout
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.label import MDLabel 
-from kivymd.uix.list import OneLineListItem,OneLineIconListItem,IconLeftWidget,IRightBodyTouch,OneLineAvatarIconListItem
+from kivymd.uix.list import OneLineListItem,OneLineIconListItem,IconRightWidget,IconLeftWidget,IRightBodyTouch,OneLineAvatarIconListItem
 from kivymd.uix.menu import MDDropdownMenu
 from kivymd.uix.progressloader import MDProgressLoader
 from kivymd.uix.snackbar import Snackbar
@@ -40,7 +41,7 @@ from kivy.properties import *
 from kivy.animation import Animation
 from kivy.metrics import dp, sp
 from kivymd.uix.chip import MDChip
-from kivymd.uix.selectioncontrol import MDCheckbox
+from kivymd.uix.selectioncontrol import MDCheckbox, MDSwitch
 from kivmob import KivMob,TestIds
 from kivy.uix.modalview import ModalView
 from threading import Thread
