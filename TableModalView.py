@@ -101,9 +101,8 @@ class TableModalView(ModalView):
         self.working = True
         self.auto_dismiss = False
         self.size_hint = (None,None)
-        self.size = kwargs["size"]
-        t = Thread(target=self.get_items)
-        t.start()
+        # self.size = kwargs["size"]
+        self.get_items()
 
     def get_items(self):
         from ItemScreen import ItemCard

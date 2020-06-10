@@ -105,11 +105,10 @@ class TableCard(Base):
 
     def open_table(self):
         from TableModalView import TableModalView
-        view = TableModalView(size=self.Card.parent.size,_card=self, callback=self.save_modal)
-        view.open()#,_mesa=self._mesa, _connection=con, callback=self.save_modal)
+        view = TableModalView(size=Window.size, _card=self, callback=self.save_modal)
+        view.open()
 
-    def save_modal(self, total):#,modal,total,freetable=False):
-        # self.TotalLabel.text = "Total: $%s" % total
+    def save_modal(self, total):
         se = _session()
         se.query(TableCard).filter(TableCard.Code == self.Code).\
                             update({TableCard.Total: total,

@@ -6,6 +6,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 _connection = create_engine('mysql+pymysql://fran:fran@localhost/resto',echo=True)
+# _connection = create_engine('mysql+pymysql://fgprese1_resto:Franco28461@fgpresentaciones.com/fgprese1_resto',echo=True)
 _session = sessionmaker(bind=_connection, expire_on_commit=False)
 Base = declarative_base(_connection)
 

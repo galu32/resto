@@ -20,7 +20,9 @@ itemscreen_kv = """
 """
 
 class ItemCard(Base):
-    
+
+    on_release = None
+
     __tablename__ = "Articulos"
 
     internalId = Column(Integer,primary_key=True)
@@ -29,7 +31,9 @@ class ItemCard(Base):
     Closed = Column(Integer)
     Price = Column(Float)
     Category = Column(String)
-
+    Recipe = Column(Integer)
+    RecipeContent = Column(String)
+    
     def load_widget(self):
         from TableScreen import BlueCenteredLabel
         self.Card = MDCard(size_hint_y=None,height=Window.height/3.6)#, padding=(20,20,20,5))
@@ -38,7 +42,7 @@ class ItemCard(Base):
         # box.add_widget(BlueCenteredLabel(font_style="Subtitle1",padding=(1,1),size_hint_y=.2,text=self.Name))
         box.add_widget(BlueCenteredLabel(font_style="H3",padding=(1,1),size_hint_y=.2,text="Precio: $%s" % self.Price))
         self.Card.add_widget(box)
-        # self.Card.on_release=self.open_category
+        self.Card.on_release=lambda : self.on_release(self)
         return self.Card
 
 class CategoryCard(Base):
